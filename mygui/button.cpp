@@ -3,7 +3,7 @@
 mygui::Button::Button(sf::RenderWindow* window) {
 	this->window = window;
 	this->text = "New Button";
-	this->font.loadFromFile("Roboto-Italic.ttf");
+	this->font.loadFromMemory(mygui_Roboto_Italic_ttf, mygui_Roboto_Italic_ttf_len);
 	this->textWidget.setFont(this->font);
 	this->textWidget.setString(this->text);
 	this->width = 150;
@@ -16,7 +16,7 @@ mygui::Button::Button(sf::RenderWindow* window) {
 mygui::Button::Button(sf::RenderWindow* window, std::string text) {
 	this->window = window;
 	this->text = text;
-	this->font.loadFromFile("Roboto-Italic.ttf");
+	this->font.loadFromMemory(mygui_Roboto_Italic_ttf, mygui_Roboto_Italic_ttf_len);
 	this->textWidget.setFont(this->font);
 	this->textWidget.setString(this->text);
 	this->width = 150;

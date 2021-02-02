@@ -5,7 +5,7 @@ namespace mygui {
 	class Widget {
 		public:
 			virtual void draw() = 0;
-			virtual ~Widget();
+			virtual ~Widget() {}
 	};
 }
 

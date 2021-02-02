@@ -28,7 +28,7 @@ int main()
 	myButton1 button(&window, "Click Me!");
     button.setSize(180, 60);
 	button.setBg(sf::Color::Red);
-    button.setFont(font);
+    // button.setFont(font);
     button.setTextAlign(mygui::textAlign::Right);
     button.setTextValign(mygui::textAlign::Middle);
 

@@ -4,6 +4,7 @@
 #include <SFML/Graphics.hpp>
 #include <string>
 #include "widget.h"
+#include "Roboto-Italic.h"
 
 namespace mygui {
 	namespace textAlign {
