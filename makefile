@@ -10,8 +10,8 @@ mygui/button.o: mygui/button.cpp mygui/button.h mygui/Roboto-Italic.h
 mygui/window.o: mygui/window.cpp mygui/window.h
 	@g++ -o mygui/window.o -c mygui/window.cpp
 
-main: main.cpp mygui/button.o
-	@g++ -o main main.cpp mygui/button.cpp -lsfml-graphics -lsfml-window -lsfml-system
+main: main.cpp mygui/button.o mygui/window.o
+	@g++ -o main main.cpp mygui/button.o mygui/window.o -lsfml-graphics -lsfml-window -lsfml-system
 
 test: main
 	@./main

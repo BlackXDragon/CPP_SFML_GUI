@@ -18,13 +18,13 @@ namespace mygui {
 
 	class Button : public mygui::Widget {
 		public:
-			Button(sf::RenderWindow*);
-			Button(sf::RenderWindow*, std::string);
+			Button();
+			Button(std::string);
 
 			bool pressed = false;
 
-			void draw();
-			void poll();
+			void draw(sf::RenderWindow*);;
+			void poll(sf::RenderWindow*);
 			void setSize(float, float);
 			void setFont(sf::Font);
 			void setTextAlign(textAlign::HorizonalAlign align);
@@ -35,7 +35,6 @@ namespace mygui {
 			sf::FloatRect getLocalBounds();
 			sf::FloatRect getGlobalBounds();
 		protected:
-			sf::RenderWindow* window;
 			std::string text;
 			sf::Font font;
 			sf::Text textWidget;

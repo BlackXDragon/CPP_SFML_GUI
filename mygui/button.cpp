@@ -1,7 +1,6 @@
 #include "button.h"
 
-mygui::Button::Button(sf::RenderWindow* window) {
-	this->window = window;
+mygui::Button::Button() {
 	this->text = "New Button";
 	this->font.loadFromMemory(mygui_Roboto_Italic_ttf, mygui_Roboto_Italic_ttf_len);
 	this->textWidget.setFont(this->font);
@@ -13,8 +12,7 @@ mygui::Button::Button(sf::RenderWindow* window) {
 	this->setPosition(this->x, this->y);
 }
 
-mygui::Button::Button(sf::RenderWindow* window, std::string text) {
-	this->window = window;
+mygui::Button::Button(std::string text) {
 	this->text = text;
 	this->font.loadFromMemory(mygui_Roboto_Italic_ttf, mygui_Roboto_Italic_ttf_len);
 	this->textWidget.setFont(this->font);
@@ -26,12 +24,12 @@ mygui::Button::Button(sf::RenderWindow* window, std::string text) {
 	this->setPosition(this->x, this->y);
 }
 
-void mygui::Button::draw() {
+void mygui::Button::draw(sf::RenderWindow* window) {
 	window->draw(this->rect);
 	window->draw(this->textWidget);
 }
 
-void mygui::Button::poll() {
+void mygui::Button::poll(sf::RenderWindow* window) {
 	sf::Vector2i mousePos = sf::Mouse::getPosition(*window);
 	sf::FloatRect myBounds = this->getGlobalBounds();
 	if (sf::Mouse::isButtonPressed(sf::Mouse::Left) && (mousePos.x > myBounds.left && mousePos.x < (myBounds.left+myBounds.width)) && (mousePos.y > myBounds.top && mousePos.y < (myBounds.top+myBounds.height))) {
